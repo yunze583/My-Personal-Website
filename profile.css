@@ -1,0 +1,19 @@
+.profile-art{background:#071b44;}
+.profile-art img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;filter:saturate(1.08);}
+.profile-overlay{position:absolute;top:24px;left:28px;display:flex;flex-direction:column;gap:2px;color:#fff;font:12px var(--mono);text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.profile-overlay strong{font:italic 21px var(--serif)}
+.profile-art .art-index{color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+@media(max-width:760px){.profile-art{height:320px}.profile-art img{object-position:center center}}
+@media(max-width:760px){
+  .hero-copy{text-align:center;margin:0 auto;display:flex;flex-direction:column;align-items:center}
+  .hero-copy .intro{margin-left:auto;margin-right:auto}
+  .section-heading{text-align:center;align-items:center;flex-direction:column;gap:8px}
+  .section-heading .eyebrow{margin-bottom:0}
+  .about{text-align:center}
+  .about-detail{margin-left:auto;margin-right:auto}
+  .details-list{text-align:left}
+  .profile-links{justify-content:center}
+  .contact{text-align:center}
+  .contact-details{text-align:left;max-width:320px;margin:0 auto}
+  .contact-footer{justify-content:center;text-align:center}
+}
