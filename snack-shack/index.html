@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7efe4" />
+  <title>The Snack Shack | Lunch, sorted.</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#menu" aria-label="The Snack Shack home">
+      <span class="brand-mark">☀</span>
+      <span>The Snack<br /><strong>Shack</strong></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a class="nav-link active" href="#menu">Menu</a>
+      <a class="nav-link" href="#how-it-works">How it works</a>
+    </nav>
+    <button class="cart-button" id="cartButton" type="button" aria-label="Open your order">
+      <span>Order</span><span class="cart-count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="menu">
+      <div class="hero-copy">
+        <p class="eyebrow">LUNCH BREAK, MADE EASY</p>
+        <h1>Good snacks.<br /><em>No long lines.</em></h1>
+        <p class="hero-text">Choose your snack, pick a size, and get your pickup code. Pay at the Shack when you grab it.</p>
+        <a class="primary-button" href="#menu-grid">See the menu <span>↓</span></a>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a snack bag and apple" role="img">
+        <span class="sun-shape"></span><span class="sparkle sparkle-one">✦</span><span class="sparkle sparkle-two">✦</span>
+        <div class="apple">●</div><div class="snack-bag"><span>SNACK<br />SHACK</span><b>🍿</b></div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu-grid">
+      <div class="section-heading"><div><p class="eyebrow">WHAT ARE YOU FEELING?</p><h2>Pick your fuel.</h2></div><p class="small-note">Ready in minutes · Pay at pickup</p></div>
+      <div class="filter-row" role="tablist" aria-label="Snack categories">
+        <button class="filter active" data-category="all" type="button">All snacks</button>
+        <button class="filter" data-category="crunchy" type="button">Crunchy</button>
+        <button class="filter" data-category="sweet" type="button">Sweet</button>
+        <button class="filter" data-category="fresh" type="button">Fresh &amp; healthy</button>
+        <button class="filter" data-category="nonallergic" type="button">Non-allergic</button>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div><p class="eyebrow">NO APP. NO ACCOUNT. NO WAITING AROUND.</p><h2>Snack now,<br /><em>play sooner.</em></h2></div>
+      <div class="steps"><div class="step"><span>01</span><h3>Build your order</h3><p>Choose a snack and the size that fits your break.</p></div><div class="step"><span>02</span><h3>Get your code</h3><p>Submit your order for a unique pickup number.</p></div><div class="step"><span>03</span><h3>Grab &amp; go</h3><p>Show your code, pay at the Shack, and get back out there.</p></div></div>
+    </section>
+  </main>
+
+  <aside class="order-drawer" id="orderDrawer" aria-label="Your order" aria-hidden="true">
+    <div class="drawer-head"><div><p class="eyebrow">YOUR ORDER</p><h2>Ready when you are.</h2></div><button class="close-button" id="closeDrawer" type="button" aria-label="Close order">×</button></div>
+    <div id="orderItems" class="order-items"></div>
+    <div class="drawer-footer"><div class="total-line"><span>Estimated total</span><strong id="orderTotal">$0.00</strong></div><p class="pay-note">Payment happens at pickup — cash or card at the Shack.</p><button class="primary-button full-width" id="placeOrder" type="button">Get my pickup code</button></div>
+  </aside>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <div class="modal" id="confirmationModal" role="dialog" aria-modal="true" aria-labelledby="confirmationTitle" aria-hidden="true">
+    <div class="modal-card"><button class="close-button" id="closeModal" type="button" aria-label="Close confirmation">×</button><div class="code-circle">✓</div><p class="eyebrow">ORDER LOCKED IN</p><h2 id="confirmationTitle">Your pickup code</h2><div class="pickup-code" id="pickupCode">SNK-000</div><p>Show this code at the Shack when you’re ready. We’ll have your order waiting, and you’ll pay there.</p><button class="primary-button full-width" id="doneButton" type="button">Done</button></div>
+  </div>
+  <div class="modal" id="sizeModal" role="dialog" aria-modal="true" aria-labelledby="sizeTitle" aria-hidden="true">
+    <div class="modal-card size-card"><button class="close-button" id="closeSizeModal" type="button" aria-label="Close size chooser">×</button><p class="eyebrow">MAKE IT YOURS</p><h2 id="sizeTitle">Choose a size</h2><p id="sizeProductName">Select a size for your snack.</p><div class="size-options"><button class="size-option" data-size="small" type="button"><strong>Small</strong><span id="smallPrice">$0.00</span></button><button class="size-option" data-size="large" type="button"><strong>Large</strong><span id="largePrice">$0.00</span></button></div></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
